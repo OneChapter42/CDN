@@ -203,6 +203,8 @@ AssertionError: Colder than absolute zero!
                 p.requires_grad = False
             if args.use_matching and 'matching_embed' in name:
                 p.requires_grad = True
+#learn named_parameters
+#see https://www.jianshu.com/p/bb88f7c08022
 
     param_dicts = [
         {"params": [p for n, p in model_without_ddp.named_parameters() if "backbone" not in n and p.requires_grad]},
