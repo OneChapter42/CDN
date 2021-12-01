@@ -155,8 +155,30 @@ def main(args):
     print("git:\n  {}\n".format(utils.get_sha()))
 
     if args.frozen_weights is not None:
-        assert args.masks, "Frozen training is meant for segmentation only"
+        assert args.masks, "Frozen training is meant for segmentation only"       
     print(args)
+
+#learn assert
+#!/usr/bin/python
+'''
+def KelvinToFahrenheit(Temperature):
+   assert (Temperature >= 0),"Colder than absolute zero!"
+   return ((Temperature-273)*1.8)+32
+
+print KelvinToFahrenheit(273)
+print int(KelvinToFahrenheit(505.78))
+print KelvinToFahrenheit(-5)
+When the above code is executed, it produces the following result −
+
+32.0
+451
+Traceback (most recent call last):
+   File "test.py", line 9, in <module>
+      print KelvinToFahrenheit(-5)
+   File "test.py", line 4, in KelvinToFahrenheit
+      assert (Temperature >= 0),"Colder than absolute zero!"
+AssertionError: Colder than absolute zero!
+'''
 
     device = torch.device(args.device)
 
